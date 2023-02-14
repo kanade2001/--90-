@@ -3,7 +3,7 @@ using namespace std;
 typedef long long ll;
 ll MOD = 1e9+7;
 
-ll l, n ,k;
+ll N, L ,K;
 ll v[1 << 18];
 
 bool solve(int mid)
@@ -11,7 +11,7 @@ bool solve(int mid)
     ll tmp = 0;
     ll cnt = 0;
 
-    for(int i=0;i<=n;i++){
+    for(int i=0;i<=N;i++){
         if(tmp + v[i] < mid){
             tmp += v[i];
         }else{
@@ -23,7 +23,7 @@ bool solve(int mid)
         cnt --;
     }
 
-    if(cnt >= k){
+    if(cnt >= K){
         return true;
     }else{
         return false;
@@ -33,20 +33,20 @@ bool solve(int mid)
 int main()
 {
     //入力
-    cin >> n >> l >> k;
-    for(int i=0;i<n;i++){
+    cin >> N >> L >> K;
+    for(int i=0;i<N;i++){
         cin >> v[i];
     }
 
     //左端からの長さではなくそれぞれの長さに
-    v[n] = l - v[n-1];
-    for(int i=n-1;i>0;i--){
+    v[N] = L - v[N-1];
+    for(int i=N-1;i>0;i--){
         v[i] -= v[i-1];
     }
 
     //二分探索
     int ok = 0; //解が存在する値
-    int ng = l + 1; //解が存在しない値
+    int ng = L + 1; //解が存在しない値
     while(abs(ok-ng) > 1){
         int mid = (ok + ng) / 2;
         //solve関数を定義
