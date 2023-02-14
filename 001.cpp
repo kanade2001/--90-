@@ -31,7 +31,7 @@ bool solve(int mid)
 }
 
 int main()
-{a
+{
     //入力
     cin >> n >> l >> k;
     for(int i=0;i<n;i++){
