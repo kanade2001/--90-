@@ -6,7 +6,7 @@ ll MOD = 1e9+7;
 int N;
 
 /*
-tree_diamiter: dfsを用いて重み付き木野直径を求める
+tree_diamiter: dfsを用いて重み付き木の直径を求める
 計算量: O(N)
 */
 class Tree_diamiter
